@@ -1,0 +1,139 @@
+/* Set the background image to cover the entire page */
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Keeps the image in place while scrolling */
+  font-family: 'Arial', sans-serif; /* Changed font style */
+}
+
+/* Home Section Styling */
+#Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  height: 100vh;
+  padding: 2em;
+  box-sizing: border-box;
+  color: white;
+  background: url(111.jpg) center center no-repeat;
+  background-size: cover;
+  animation: zoom 20s infinite alternate; /* Apply zoom animation */
+}
+
+/* Zoom Animation for Background */
+@keyframes zoom {
+  0% {
+      background-size: 100%; /* Initial size */
+  }
+  100% {
+      background-size: 110%; /* Zoomed size */
+  }
+}
+
+/* Styling for headings and paragraph */
+#Home h4 {
+  font-size: 2.5em; /* Increased font size */
+  color: #ffcc00; /* Changed color */
+  background-image: linear-gradient(to right, #434343 0%, black 100%);
+  margin-bottom: 15px;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInDown 0.8s ease forwards;
+}
+
+#Home h2 {
+  font-size: 4em; /* Increased font size */
+  color: linear-gradient(-20deg, #b721ff 0%, #21d4fd 100%); /* Changed color */
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInDown 1s ease forwards;
+
+}
+
+#Home p {
+  font-size: 2em; /* Increased font size */
+  margin-bottom: 30px;
+  color: rgba(255, 255, 255, 0.8); /* Softer color */
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInDown 1.2s ease forwards;
+}
+
+#Home h1 {
+  color: linear-gradient(90deg, hsla(189, 92%, 69%, 1) 0%, hsla(335, 89%, 66%, 1) 50%, hsla(240, 63%, 57%, 1) 100%);
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(-50px);
+  animation: fadeInDown 1.4s ease forwards;
+  font-size: 72px;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Button styling */
+#Home button {
+  background-color: #28a745; /* New button color */
+  color: #fff;
+  padding: 20px 40px; /* Increased padding for bigger buttons */
+  font-size: 1.8em; /* Increased font size */
+  border: none;
+  border-radius: 50px; /* More rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.3); /* Updated shadow color */
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeInDown 1.6s ease forwards;
+}
+
+/* Button hover effects */
+#Home button:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.1) rotate(3deg); /* Added rotation for extra effect */
+  box-shadow: 0 15px 25px rgba(40, 167, 69, 0.5);
+}
+
+/* Keyframes for fade-in animations */
+@keyframes fadeInDown {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  #Home {
+      padding: 50px 15px;
+  }
+  #Home h2 {
+      font-size: 3em; /* Adjusted for medium screens */
+  }
+  #Home p {
+      font-size: 1.5em; /* Adjusted for medium screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #Home {
+      padding: 30px 10px;
+  }
+  #Home h1 {
+      font-size: 3em; /* Adjusted for small screens */
+  }
+  #Home h2 {
+      font-size: 2.5em; /* Adjusted for small screens */
+  }
+}

@@ -1,0 +1,121 @@
+
+.Navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(to right, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+  position: relative;
+  z-index: 100;
+  height: 40px;
+  box-shadow: 0 4px 2px -2px gray;
+
+}
+
+.Navigator a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bolder;
+  font-size: 1.4em;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.Navigator a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+
+.Navigator a:hover {
+  color: #ffdd57;
+  transform: translateY(-3px);
+}
+
+.Navigator a:hover::after {
+  width: 100%;
+}
+
+
+.Navigator .icon-link i {
+  font-size: 20px;
+  margin-right: 5px;
+  transition: transform 0.3s ease;
+}
+
+.Navigator .icon-link:hover i {
+  transform: scale(1.2);
+}
+
+
+@media (max-width: 768px) {
+  .Navigator {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .Navigator a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .Navigator .icon-link {
+    align-self: flex-end;
+  }
+}
+
+
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.burger-menu div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .burger-menu {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .Navigator {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+  }
+
+  .Navigator.active {
+    display: flex;
+  }
+
+  .burger-menu.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .burger-menu.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger-menu.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}

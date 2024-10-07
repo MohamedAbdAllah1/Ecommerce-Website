@@ -1,0 +1,19 @@
+<!-- product-card.component.html -->
+<div class="product-card">
+    <img [src]="Productdetails.image" alt="{{ Productdetails.title }}">
+    <h3>{{ Productdetails.title }}</h3>
+    <p>Description: {{ Productdetails.description }}</p>
+    <p>Brand: {{ Productdetails.brand }}</p>
+    <p>Model: {{ Productdetails.model }}</p>
+    <p>Category: {{ Productdetails.category }}</p>
+    <p *ngIf="Productdetails.color">Color: {{ Productdetails.color }}</p>
+    <p>Price: ${{ Productdetails.price }}</p>
+    <p *ngIf="Productdetails.discount">Discount: {{ Productdetails.discount }}%</p>
+    <p *ngIf="Productdetails.popular">Popular: {{ Productdetails.popular ? 'Yes' : 'No' }}</p>
+    <p *ngIf="Productdetails.onSale">On Sale: {{ Productdetails.onSale ? 'Yes' : 'No' }}</p>
+    
+    <div class="buttons">
+      <button (click)="addToCart()">Add to Cart</button>
+    </div>
+  </div>
+  

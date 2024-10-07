@@ -1,0 +1,15 @@
+<div class="filter-container">
+    <div class="category-container">
+        <app-category (categoryChange)="onCategoryChange($event)"></app-category>
+    </div>
+    <div class="search-container">
+        <app-search (searchChange)="filterProducts($event)"></app-search>
+    </div>
+</div>
+
+<div class="product-container">
+    <app-product
+        *ngFor="let product of filteredProducts"
+        [ProductInput]="product">
+    </app-product>
+</div>
